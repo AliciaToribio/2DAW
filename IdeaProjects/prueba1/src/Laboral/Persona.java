@@ -1,5 +1,6 @@
 package Laboral;
 /**
+ *
  * Representa a una persona con nombre, DNI y sexo
  */
 public class Persona {
