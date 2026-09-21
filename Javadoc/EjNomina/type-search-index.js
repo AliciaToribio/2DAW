@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"CalculaNominas"},{"p":"<Unnamed>","l":"DatosNoCorrectosException"},{"p":"<Unnamed>","l":"Empleado"},{"p":"<Unnamed>","l":"Nomina"},{"p":"Laboral","l":"Persona"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"Otros","l":"CalculaNominas"},{"p":"Otros","l":"DatosNoCorrectosException"},{"p":"Otros","l":"Empleado"},{"p":"Otros","l":"Nomina"},{"p":"Laboral","l":"Persona"}];updateSearchResults();

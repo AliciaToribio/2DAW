@@ -1,3 +1,5 @@
+package Otros;
+
 public class CalculaNominas {
     /**
      * Crea a los empleados James y Ada, se imprimen sus datos y sueldos, incrementa un año a Ada,

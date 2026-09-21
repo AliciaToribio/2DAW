@@ -1,3 +1,5 @@
+package Otros;
+
 import Laboral.Persona;
 /**
  * Representa a un empleado de la empresa que tiene una categoría profesional y unos años de antigüedad

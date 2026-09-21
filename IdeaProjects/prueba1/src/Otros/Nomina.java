@@ -1,3 +1,5 @@
+package Otros;
+
 /**
  * Clase para calcular la nómina de los empleados
  */

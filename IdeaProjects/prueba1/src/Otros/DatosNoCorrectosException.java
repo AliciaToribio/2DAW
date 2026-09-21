@@ -1,3 +1,5 @@
+package Otros;
+
 /**
  * Excepción que se lanza cuando se intentan asignar datos no válidos a un empleado
  */
