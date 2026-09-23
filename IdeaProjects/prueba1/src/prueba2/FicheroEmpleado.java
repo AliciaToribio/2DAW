@@ -19,7 +19,7 @@ public class FicheroEmpleado {
             String linea;
             while ((linea = br.readLine()) != null) {
                 String[] partes = linea.split(";");
-                Empleado emp;
+                Empleado emp = null;
 
                 if (partes.length == 5) {
                     String nombre = partes[0];
@@ -34,34 +34,40 @@ public class FicheroEmpleado {
                     String dni = partes[1];
                     char sexo = partes[2].charAt(0);
                     emp = new Empleado(nombre, dni, sexo);
-
-                } else {
-                    // lanzar DatosNoCorrectosException
-                    continue;
                 }
                 empleados.add(emp);
             }
+        } catch (IOException e) {
+            System.out.println("Error leyendo ficheros " + e);
+        } catch (DatosNoCorrectosException ex) {
+            System.out.println("Error en los datos 0" + ex);
         }
         return empleados;
     }
 
-    public static void reescribirEmpleados(String rutaFichero, ArrayList<Empleado> empleados) throws IOException {
+    //dudas, como sabes el empleado que cambias?? cambias que dato?? reescribes linea??
+    public static void reescribirEmpleados(String rutaFichero, ArrayList<Empleado> empleados) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(rutaFichero))) {
             for (Empleado emp : empleados) {
                 String linea = emp.nombre + ";" + emp.dni + ";" + emp.sexo + ";" + emp.getCategoria() + ";" + emp.anyos;
                 bw.write(linea);
                 bw.newLine();
             }
+        } catch (IOException e) {
+            System.out.println("Error leyendo ficheros " + e);
         }
     }
 
-    public static void escribirSueldo(String rutaFichero, ArrayList<Empleado> empleados) throws IOException {
+    public static void escribirSueldo(String rutaFichero, ArrayList<Empleado> empleados) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(rutaFichero))) {
             for (Empleado emp : empleados) {
                 String linea = emp.dni + ";" + Nomina.sueldo(emp);
                 bw.write(linea);
                 bw.newLine();
             }
+        } catch (IOException e) {
+            System.out.println("Error leyendo ficheros " + e);
+
         }
     }
 }
