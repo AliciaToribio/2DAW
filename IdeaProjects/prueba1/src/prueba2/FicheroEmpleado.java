@@ -28,10 +28,8 @@ public class FicheroEmpleado {
                 emp = new Empleado(nombre, dni, sexo, categoria, anyos);
                 empleados.add(emp);
             }
-        } catch (IOException e) {
-            System.out.println("Error leyendo ficheros " + e);
-        } catch (DatosNoCorrectosException ex) {
-            System.out.println("Error en los datos 0" + ex);
+        } catch (Exception e) {
+            System.out.println("Error al leer empleado"+ e.getMessage());
         }
         return empleados;
     }
@@ -43,8 +41,8 @@ public class FicheroEmpleado {
                 bw.write(linea);
                 bw.newLine();
             }
-        } catch (IOException e) {
-            System.out.println("Error leyendo ficheros " + e);
+        } catch (Exception e) {
+            System.out.println("Error al escribir el sueldo empleado"+ e.getMessage());
 
         }
     }

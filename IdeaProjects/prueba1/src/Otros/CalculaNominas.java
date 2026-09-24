@@ -34,7 +34,7 @@ public class CalculaNominas {
 
         MetodosBD mbd = new MetodosBD();
         MetodosAltaEmpleado altaBD = new MetodosAltaEmpleado();
-        altaBD.altaEmpleados("Recursos\\empleadosNuevos.txt");
+        altaBD.altaEmpleado("Recursos\\empleadosNuevos.txt");
         ArrayList<Empleado> listaEmpleado = new FicheroEmpleado().leerEmpleados("Recursos\\empleados.txt");
         Empleado e1 = listaEmpleado.get(0);
         Empleado e2 = listaEmpleado.get(1);
@@ -72,19 +72,22 @@ public class CalculaNominas {
                     mbd.mostrarSalarioEmpleado(dni);
                     break;
                 case 3:
-
+                    System.out.println("Escriba el DNI del empleado a actualizar");
+                    sc.nextLine();
+                    dni = sc.nextLine();
+                    mbd.modificardatos(dni);
                     break;
                 case 4:
                     System.out.println("Escriba el DNI del empleado a mostrar");
                     sc.nextLine();
                     dni = sc.nextLine();
-
+                    mbd.actualizarSueldoEmpleado(dni);
                     break;
                 case 5:
-
+                    mbd.actualizarSueldoEmpleados();
                     break;
                 case 6:
-
+                    mbd.backup("Recursos\\backup.txt");
                     break  ;
                 default:
                     System.out.println("La opcion debe ser entre 0 y 6");
@@ -93,13 +96,6 @@ public class CalculaNominas {
 
         } while (opcion != 0);
         sc.close();
-
-        //prueba de conexion con bd
-        try (Connection con = ConexionBD.getConnection()) {
-            System.out.println("Conexión establecida correctamente");
-        } catch (SQLException e) {
-            System.out.println("Error de conexión: " + e.getMessage());
-        }
     }
 
     /**
